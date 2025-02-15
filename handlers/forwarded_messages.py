@@ -1,6 +1,5 @@
 from aiogram import types
-from config import CHANNEL_ID
-from loader import bot
+from config import CHANNEL_ID 
 
 from data.words import blacklisted_words  
 
@@ -13,6 +12,8 @@ def is_blacklisted(message):
 
 
 async def forwarded_message_handler(message: types.Message):
+    from loader import bot
+    
     if message.forward_from is not None:
         if is_blacklisted(message.text):
             return
