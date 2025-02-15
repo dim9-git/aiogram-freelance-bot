@@ -20,7 +20,7 @@ async def on_shutdown(_):
     await bot.delete_webhook()
 
 
-async def handle_webhook(request):
+async def webhook_handler(request):
     url = str(request.url)
     index = url.rfind("/")
     token = url[index+1:]
@@ -35,7 +35,7 @@ async def handle_webhook(request):
     return web.Response(status=404)
 
 
-app.router.add_post(f"/{BOT_TOKEN}", handler=handle_webhook)
+app.router.add_post(f"/{BOT_TOKEN}", handler=webhook_handler)
 
 
 async def root(_):

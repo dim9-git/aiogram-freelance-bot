@@ -1,5 +1,5 @@
-from . import forwarded
+from . import forwarded_messages
 
 
 def setup(dp):
-    forwarded.setup(dp)
+    forwarded_messages.setup(dp)
