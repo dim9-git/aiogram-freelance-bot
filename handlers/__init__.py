@@ -1,3 +1,3 @@
-from .cmd_forward import router as forward_router
+from routers import router
 
-__all__ = ["forward_router"]
+from . import forwarded_handler
