@@ -3,11 +3,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHANNEL_ID = os.getenv("CHANNEL_ID")
 
-WEB_SERVER = os.getenv("WEB_SERVER")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+
+BASE_WEBHOOK_URL = os.getenv("BASE_WEBHOOK_URL")
 PORT = os.getenv("PORT")
+WEBHOOK_SECRET = os.getenv("WEBHOOK_SECRET")
 
 WEBHOOK_PATH = f"/{BOT_TOKEN}"
-WEBHOOK_URL = f"{WEB_SERVER}{WEBHOOK_PATH}"
+WEBHOOK_URL = f"{BASE_WEBHOOK_URL}{WEBHOOK_PATH}"

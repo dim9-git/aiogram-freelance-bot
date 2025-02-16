@@ -1,5 +1,3 @@
-from . import forwarded_messages
+from .cmd_forward import router as forward_router
 
-
-def setup(dp):
-    forwarded_messages.setup(dp)
+__all__ = ["forward_router"]
